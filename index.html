@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Quiz</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="homeScreen">
+    <div class="card">
+        <h1>🐍 PYTHON QUIZ</h1>
+
+        <p>
+            Test your Python knowledge with randomized questions.
+            Each question has only 10 seconds.
+        </p>
+
+        <button id="startBtn">
+            Start Quiz
+        </button>
+    </div>
+</div>
+
+<div id="quizScreen" class="hidden">
+
+    <div class="quiz-container">
+
+        <h2 id="questionNo"></h2>
+
+        <div class="timer-container">
+            <div id="timer">10</div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <h2 id="question"></h2>
+
+        <div id="options"></div>
+
+        <button id="nextBtn">
+            Next →
+        </button>
+
+    </div>
+
+</div>
+
+<div id="resultScreen" class="card hidden">
+
+    <h1>🎉 Quiz Finished</h1>
+
+    <h2 id="finalScore"></h2>
+
+    <button onclick="location.reload()">
+        Play Again
+    </button>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

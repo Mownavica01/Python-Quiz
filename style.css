@@ -1,0 +1,310 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:linear-gradient(
+    135deg,
+    #00c6ff,
+    #0072ff,
+    #7b2ff7,
+    #f107a3
+    );
+
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+}
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+.card,
+.quiz-container{
+    width:800px;
+    max-width:95%;
+
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.15);
+
+    animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+h1{
+    text-align:center;
+
+    font-size:3rem;
+
+    color:#6d28d9;
+
+    margin-bottom:15px;
+
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px #7b2ff7;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #7b2ff7,
+        0 0 35px #f107a3;
+    }
+}
+p{
+    text-align:center;
+
+    color:#444;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+    margin-bottom:25px;
+}
+#question{
+    margin:25px 0;
+
+    line-height:1.6;
+
+    color:#222;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    padding:14px 25px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+/* Start & Next Button */
+
+#startBtn,
+#nextBtn{
+
+    background:linear-gradient(
+    45deg,
+    #7b2ff7,
+    #f107a3
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:
+    0 8px 20px rgba(123,47,247,.35);
+}
+
+#startBtn:hover,
+#nextBtn:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+
+    box-shadow:
+    0 12px 25px rgba(241,7,163,.4);
+}
+
+/* =========================
+   OPTION BUTTONS
+========================= */
+
+.option{
+
+    width:100%;
+
+    display:block;
+
+    margin:12px 0;
+
+    padding:16px;
+
+    text-align:left;
+
+    font-weight:500;
+
+    background:#f8f5ff;
+
+    border:2px solid transparent;
+}
+
+.option:hover{
+
+    background:#ede9fe;
+
+    border-color:#8b5cf6;
+
+    transform:translateX(8px);
+}
+
+/* =========================
+   CORRECT & WRONG
+========================= */
+
+.correct{
+
+    background:#22c55e !important;
+
+    color:white;
+}
+
+.wrong{
+
+    background:#ef4444 !important;
+
+    color:white;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress{
+
+    height:14px;
+
+    background:#ddd;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    90deg,
+    #00c6ff,
+    #7b2ff7,
+    #f107a3
+    );
+
+    transition:.5s;
+}
+
+/* =========================
+   RESULT SCREEN
+========================= */
+
+#resultScreen{
+
+    text-align:center;
+}
+
+#finalScore{
+
+    margin-top:20px;
+
+    font-size:2rem;
+
+    color:#6d28d9;
+}
+
+/* =========================
+   HIDDEN CLASS
+========================= */
+
+.hidden{
+    display:none;
+}
+
+/* =========================
+   QUESTION NUMBER
+========================= */
+
+#questionNo{
+
+    color:#6d28d9;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .card,
+    .quiz-container{
+
+        padding:25px;
+    }
+
+    h1{
+
+        font-size:2.2rem;
+    }
+
+    button{
+
+        width:100%;
+    }
+
+    .option{
+
+        font-size:15px;
+    }
+}
